@@ -42,9 +42,13 @@ INSTALLED_APPS = [
     'message',
     'xadmin',
     'crispy_forms',
-    'reversion'
+    'reversion',
+    'course',
+    'user',
+    'organization',
+    'operation'
 ]
-
+AUTH_USER_MODEL = "user.UserProfile"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -132,3 +136,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf.urls import url
+from django.views.static import serve
+from shop.settings import MEDIA_ROOT
 import xadmin
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     path('home/', include('home.urls')),
-     path('message/', include('message.urls')),
+    path('message/', include('message.urls')),
+      #配置上传文件的访问处理函数
+   #url(r'^media/(?P<path>.*)$',  serve, {"document_root":MEDIA_ROOT}),
 ]

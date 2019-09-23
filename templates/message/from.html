@@ -6,6 +6,13 @@
     <title></title>
 </head>
 <body>
-111111111
+<form method="post" action ="{% url 'message'%}" class="smart-green">
+     {% csrf_token %}
+   用户名： <input type="text" name="username"><br>
+  邮箱： <input type="text" name="email"><br>
+  地址：<input type="text" name="address"><br>
+    内容：<textarea name="message"></textarea><br>
+    <input type="submit" value="提交"><br>
+</form>
 </body>
 </html>
